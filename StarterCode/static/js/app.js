@@ -6,7 +6,7 @@ var tbody = d3.select("tbody");
 
 console.log(data);
 
-// // Step 1: Loop Through `data` and console.log each ufosighting object
+// Loop Through `data` and console.log each ufosighting object
 function buildTable(data){
 tbody.html("");
   
@@ -30,19 +30,15 @@ submit.on("click", function() {
 
   // Prevent the page from refreshing
 d3.event.preventDefault();
-// var row=tbody.append("tr");
 
   // Select the input element and get the raw HTML node
   var inputElement=d3.select("#datetime");
 
   // Get the value property of the input element
   var inputValue = inputElement.property("value");
-  // console.log(inputvalue);
-  // console.log(tabledata)
 
   // Use the form input to filter the data by datetime
 var filterData= tableData.filter(row=>row.datetime===inputValue);
-
 
 filterData.forEach(function (ufosighting) {
   console.log(ufosighting);
